@@ -14,7 +14,7 @@
         </local>
         <remote>
             <enabled>true</enabled>
-            <storeEnabled>true</storeEnabled>
+            <storeEnabled>#{env['CI'] == null}</storeEnabled>
             <server>
                 <id>taddiken-net</id>
                 <url>https://build-cache.taddiken.net</url>
@@ -25,4 +25,32 @@
             </server>
         </remote>
     </buildCache>
+    <gradleEnterprise>
+        <plugins>
+            <plugin>
+                <artifactId>maven-invoker-plugin</artifactId>
+                <inputs>
+                    <fileSets>
+                        <fileSet>
+                            <name>integration-tests</name>
+                            <paths>
+                                <path>src/it</path>
+                            </paths>
+                            <includes>
+                                <include>**</include>
+                            </includes>
+                            <normalization>RELATIVE_PATH</normalization>
+                        </fileSet>
+                    </fileSets>
+                </inputs>
+                <outputs>
+                    <directories>
+                        <directory>
+                            <name>integration-tests</name>
+                            <path>${project.build.directory}/it</path>
+                        </directory>
+                    </directories>
+                </outputs>
+            </plugin>
+        </plugins>
 </gradleEnterprise>
