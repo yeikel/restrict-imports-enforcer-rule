@@ -169,9 +169,10 @@
                                     <inputs>
                                         <fileSets>
                                             <fileSet>
-                                                <name>integration-tests</name>
+                                                <name>integration-tests-in</name>
                                                 <paths>
                                                     <path>src/it</path>
+                                                    <path>src/main/java</path>
                                                 </paths>
                                                 <includes>
                                                     <include>**</include>
@@ -183,7 +184,7 @@
                                     <outputs>
                                         <directories>
                                             <directory>
-                                                <name>integration-tests</name>
+                                                <name>integration-tests-out</name>
                                                 <path>${project.build.directory}/it</path>
                                             </directory>
                                         </directories>
