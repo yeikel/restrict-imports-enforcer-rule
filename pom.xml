@@ -165,6 +165,7 @@
                         <gradleEnterprise>
                             <plugins>
                                 <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
                                     <artifactId>maven-invoker-plugin</artifactId>
                                     <inputs>
                                         <fileSets>
